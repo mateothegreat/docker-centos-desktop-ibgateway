@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Type=Application
+Name=IB Gateway (paper mode)
+Exec=/bin/bash /opt/IBController/Scripts/IBController.sh 962 -g --mode=paper
+Icon=/usr/share/icons/Adwaita/22x22/emblems/emblem-generic.png
+Categories=Application;
+Comment=
+Path=
+Terminal=true
+StartupNotify=false

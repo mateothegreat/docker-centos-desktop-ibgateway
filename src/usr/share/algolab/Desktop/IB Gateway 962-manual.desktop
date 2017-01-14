@@ -1,0 +1,7 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=IB Gateway 962 (manual login)
+Exec=/bin/sh "/opt/Jts/ibgateway/962/ibgateway"
+Icon=/opt/Jts/ibgateway/962/.install4j/ibgateway.png
+Categories=Application;

@@ -1,0 +1,7 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=IB Gateway 962 (auto-login)
+Exec=/bin/sh "/opt/IBController/IBControllerGatewayStart.sh"
+Icon=/opt/Jts/ibgateway/962/ibgateway.png
+Categories=Application;
