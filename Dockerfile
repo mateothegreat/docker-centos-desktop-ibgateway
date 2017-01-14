@@ -1,6 +1,6 @@
 #
 #
-FROM appsoa/docker-centos-desktop-vnc:testing
+FROM appsoa/docker-centos-desktop-vnc:latest
 
 USER root
 
