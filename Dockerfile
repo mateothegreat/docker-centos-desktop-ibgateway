@@ -8,7 +8,7 @@ COPY src/bin /bin
 COPY src/home /home
 COPY src/opt /opt
 
-COPY ibgateway.jars.tar /tmp
+ADD https://storage.googleapis.com/algolab-container-resources/ibgateway.jars.tar /tmp/
 RUN tar -xvzf /tmp/ibgateway.jars.tar -C /home/user/Jts/ibgateway/962
 
 RUN chmod +x /etc/xdg/xfce4/xinitrc && \
