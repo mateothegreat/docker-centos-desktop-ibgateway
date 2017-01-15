@@ -15,6 +15,6 @@ docker run -id  -e CONF_VNC_PASS=changeme \
                 -e CONF_IB_USER=alglab111 \
                 -e CONF_IB_PASS=greg2017 \
                 -e CONF_IB_READ_ONLY=no \
-                -p 5901:5901 -p 6901:6901 -p 4100:4100 \
+                -p 5901:5901 -p 6901:6901 -p 4100:4100 -p 4440:4440 \
                 --name gateway \
                 appsoa/docker-centos-desktop-ibgateway:testing

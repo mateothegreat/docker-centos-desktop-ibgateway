@@ -11,11 +11,12 @@ COPY src/opt /opt
 ADD https://storage.googleapis.com/algolab-container-resources/ibgateway.jars.tar /tmp/
 RUN tar -xvzf /tmp/ibgateway.jars.tar -C /home/user/Jts/ibgateway/962
 
-RUN chmod +x /etc/xdg/xfce4/xinitrc && \
+RUN yum -y install nc && \
+    chmod +x /etc/xdg/xfce4/xinitrc && \
     chmod 0 /usr/bin/xfce4-panel && \
     chown -R user:wheel /home/user /opt/IBController
 
-EXPOSE 4100 5901
+EXPOSE 4100 5901 4440
 
 USER user
 ENTRYPOINT ["/bin/ibgateway-settings.sh"]
