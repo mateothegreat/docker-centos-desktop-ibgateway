@@ -4,7 +4,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: deployment-alglab111
+  name: alglab111
   labels:
     service: vncserver
 spec:
@@ -17,11 +17,10 @@ spec:
         service: vncserver
     spec:
       containers:
-      - name: desktop-ibgateway-alglab111
+      - name: alglab111-ibgateway
         image: appsoa/docker-centos-desktop-ibgateway:latest
         ports:
           - containerPort: 5901
-          - containerPort: 6901
           - containerPort: 4100
         env:
           - name: CONF_VNC_PASS
@@ -38,7 +37,7 @@ spec:
             value: 'greg2017'
           - name: CONF_IB_READ_ONLY
             value: 'no'
-      - name: desktop-webvnc-alglab111
+      - name: alglab111-webvnc
         image: appsoa/docker-centos-desktop-webvnc:latest
         ports:
           - containerPort: 6901
@@ -46,4 +45,4 @@ spec:
           - name: CONF_VNC_HTTP_PORT
             value: '6901'
           - name: CONF_VNC_REMOTE
-            value: '146.148.76.226:5901'
+            value: 'desktop-gateway:5901'

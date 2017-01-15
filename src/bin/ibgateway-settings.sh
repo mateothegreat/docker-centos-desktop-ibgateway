@@ -3,7 +3,7 @@ function start_gateway() {
 
     echo "[containerizing]  Starting IBGateway Server.."
 
-    /bin/bash /opt/IBController/Scripts/IBController.sh 962 -g --tws-path=/home/user/Jts --tws-settings-path=/home/user/Jts --ibc-path=/opt/IBController --ibc-ini=/home/user/IBController/IBController.ini --user= --pw= --fix-user= --fix-pw= --java-path= --mode=$CONF_TRADING_MODE &
+    /bin/bash /opt/IBController/Scripts/IBController.sh 962 -g --tws-path=/home/user/Jts --tws-settings-path=/home/user/Jts --ibc-path=/opt/IBController --ibc-ini=/home/user/IBController/IBController.ini --user= --pw= --fix-user= --fix-pw= --java-path= --mode=$CONF_TRADING_MODE 2>&1 &
 
 }
 
@@ -47,6 +47,7 @@ touch /home/user/Jts/launcher.log
 #                 echo STOP | nc $(hostname -I) 4440
 
 #         done
+    sleep 5
 
 while [[ -z $(find /home/user/Jts -name ibg.xml) ]]; do
             sleep 0.5
@@ -58,9 +59,10 @@ ls -la /home/user/Jts
     echo $CONF
     sed -i 's/overridePrecautionaryConstraints="false"/overridePrecautionaryConstraints="true"/g' $CONF
     sed -i 's/readOnlyApi="true"/readOnlyApi="false"/g' $CONF
+    sleep 5
 
-    start_gateway
-
+    # start_gateway
+    /bin/bash /opt/IBController/Scripts/IBController.sh 962 -g --tws-path=/home/user/Jts --tws-settings-path=/home/user/Jts --ibc-path=/opt/IBController --ibc-ini=/home/user/IBController/IBController.ini --user= --pw= --fix-user= --fix-pw= --java-path= --mode=$CONF_TRADING_MODE 2>&1
     # sleep 2
     # ps fauxw
 
