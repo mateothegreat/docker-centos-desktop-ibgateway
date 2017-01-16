@@ -2,7 +2,7 @@
 
     /opt/IBController/IBControllerGatewayStart.sh  &
 
-    sleep 15
+    sleep 60
     PID=$(pidof java)
     IP=$(hostname -I)
 
@@ -11,7 +11,7 @@
     # sh -c 'tail -n +0 --pid=$$ -f /home/user/Jts/launcher.log | { sed "/Authentication completed/ q" && kill $$ ;}'
     # sleep 3
     echo STOP | nc $IP 4440
-sleep 15
+sleep 60
     # sh -c 'tail -n +0 --pid=$$ -f /home/user/Jts/*/ibgateway.log | { sed "/Shutdown thread finished/ q" && kill $$ ;}'
 
     # CONF=$(find /home/user/Jts -name ibg.xml)
@@ -26,6 +26,7 @@ sleep 15
 
 ps fauxw
 echo "Starting again..."
+sleep 60
 /opt/IBController/IBControllerGatewayStart.sh
 # sleep 5
 # /usr/bin/java -cp /home/user/Jts/ibgateway/962/jars/jts4launch-962.jar:/home/user/Jts/ibgateway/962/jars/locales.jar:/home/user/Jts/ibgateway/962/jars/log4j-api-2.5.jar:/home/user/Jts/ibgateway/962/jars/log4j-core-2.5.jar:/home/user/Jts/ibgateway/962/jars/total-2015c.jar:/home/user/Jts/ibgateway/962/jars/twslaunch-962.jar:/home/user/Jts/ibgateway/962/jars/twslaunch-install4j-1.7.jar:/opt/IBController/IBController.jar -Xmx128m ibcontroller.IBGatewayController /home/user/IBController/IBController.ini paper
