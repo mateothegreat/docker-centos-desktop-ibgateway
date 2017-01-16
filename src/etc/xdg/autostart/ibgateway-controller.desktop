@@ -1,0 +1,6 @@
+[Desktop Entry]
+Version=1.0
+Name=IB Gateway
+Exec=/opt/IBController/IBControllerGatewayStart.sh
+Terminal=false
+Type=Application
