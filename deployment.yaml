@@ -16,13 +16,17 @@ spec:
       targetPort: 5901
       protocol: TCP
       name: vnc
+    - port: 4100
+      targetPort: 4100
+      protocol: TCP
+      name: ibg
   selector:
     app: ibgateway
 ---
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: ibgateway
+  name: alglab333
 spec:
   replicas: 1
   template:
@@ -46,7 +50,7 @@ spec:
             - name: CONF_TRADING_MODE
               value: 'paper'
             - name: CONF_IB_USER
-              value: 'alglab444'
+              value: 'alglab333'
             - name: CONF_IB_PASS
               value: 'greg2017'
             - name: CONF_IB_READ_ONLY
