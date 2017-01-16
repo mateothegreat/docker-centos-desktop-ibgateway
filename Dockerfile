@@ -18,5 +18,10 @@ RUN yum -y install nc && \
 
 EXPOSE 4100 5901 4440
 
+# ENTRYPOINT ["/bin/ibgateway-settings.sh"]
+COPY src/entrypoint.sh /
+COPY src/entrypoint.d/* /entrypoint.d/
+ONBUILD COPY src/entrypoint.d/* /entrypoint.d/
+
 USER user
-ENTRYPOINT ["/bin/ibgateway-settings.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
