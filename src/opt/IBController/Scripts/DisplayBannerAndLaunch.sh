@@ -58,8 +58,9 @@ export IBC_VRSN
      "--tws-path=${TWS_PATH}" "--tws-settings-path=${TWS_CONFIG_PATH}" \
 	 "--ibc-path=${IBC_PATH}" "--ibc-ini=${IBC_INI}" \
      "--user=${TWSUSERID}" "--pw=${TWSPASSWORD}" "--fix-user=${FIXUSERID}" "--fix-pw=${FIXPASSWORD}" \
-     "--java-path=${JAVA_PATH}" "--mode=${TRADING_MODE}" 2>&1
-     #>> "${log_file}" 2>&1
+     "--java-path=${JAVA_PATH}" "--mode=${TRADING_MODE}"
+     #"--java-path=${JAVA_PATH}" "--mode=${TRADING_MODE}" 2>&1
+     >> "${log_file}" 2>&1
 
 if [ "$?" != "0" ]; then
 	echo -e ${light_red}

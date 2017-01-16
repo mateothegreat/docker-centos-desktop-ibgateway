@@ -145,5 +145,5 @@ export FIXPASSWORD
 export JAVA_PATH
 export APP
 
-"${IBC_PATH}/Scripts/DisplayBannerAndLaunch.sh" &
+"${IBC_PATH}/Scripts/DisplayBannerAndLaunch.sh"
 

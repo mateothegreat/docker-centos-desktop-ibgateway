@@ -13,7 +13,7 @@ RUN tar -xvzf /tmp/ibgateway.jars.tar -C /home/user/Jts/ibgateway/962
 
 RUN yum -y install nc && \
     chmod +x /etc/xdg/xfce4/xinitrc && \
-    chmod 0 /usr/bin/xfce4-panel && \
+    # chmod 0 /usr/bin/xfce4-panel && \
     chown -R user:wheel /home/user /opt/IBController
 
 EXPOSE 4100 5901 4440
