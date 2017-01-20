@@ -1,6 +1,6 @@
 #
 #
-FROM appsoa/docker-centos-desktop-vnc:latest
+FROM gcr.io/virtualmachines-154415/docker-centos-desktop-vnc:1.0.0
 
 USER root
 ENV INSTALL4J_JAVA_HOME /usr/java/jdk1.8.0_60

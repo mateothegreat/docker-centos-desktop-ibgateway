@@ -60,7 +60,8 @@ export IBC_VRSN
      "--user=${TWSUSERID}" "--pw=${TWSPASSWORD}" "--fix-user=${FIXUSERID}" "--fix-pw=${FIXPASSWORD}" \
      "--java-path=${JAVA_PATH}" "--mode=${TRADING_MODE}"
      #"--java-path=${JAVA_PATH}" "--mode=${TRADING_MODE}" 2>&1
-     >> "${log_file}" 2>&1
+     #>> "${log_file}" 2>&1
+     >> /home/user/Jts/launcher.log 2>&1
 
 if [ "$?" != "0" ]; then
 	echo -e ${light_red}
