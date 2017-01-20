@@ -14,9 +14,11 @@ docker logs gateway -f --tail 100
 
 
 ```
-$ docker-centos-tools/build.sh docker-centos-desktop-ibgateway/ virtualmachines-154415 docker-centos-desktop-ibgateway 1.0.0 gcr.io && docker-centos-desktop-ibgateway/run.sh && docker logs -f --tail all gateway
+docker-centos-tools/build.sh docker-centos-desktop-ibgateway/ virtualmachines-154415 
 
-$ docker-centos-tools/push.sh docker-centos-desktop-ibgateway virtualmachines-154415 docker-centos-desktop-ibgateway 1.0.0 gcr.io 
+docker-centos-desktop-ibgateway/run.sh 1.0.0-4 && docker logs -f --tail all gateway 
+
+docker-centos-tools/push.sh docker-centos-desktop-ibgateway virtualmachines-154415 docker-centos-desktop-ibgateway 1.0.0-4 gcr.io 
 
 ```
 
