@@ -1,6 +1,7 @@
 #
 #
-FROM gcr.io/virtualmachines-154415/docker-centos-desktop-vnc:1.0.0-4
+FROM appsoa/docker-centos-desktop-vnc:latest
+MAINTAINER Matthew Davis <matthew@appsoa.io>
 
 USER root
 ENV INSTALL4J_JAVA_HOME=/usr/java/jdk1.8.0_60 \
@@ -19,7 +20,7 @@ RUN tar -xvzf /tmp/ibgateway.jars.tar -C /home/user/Jts/ibgateway/962
 RUN yum -y install nc && \
     chown -R user.wheel /home/user /opt/IBController
 
-EXPOSE 4100 5901 4440
+EXPOSE 4100 5902 4440 6906
 
 COPY src/entrypoint.sh /
 COPY src/entrypoint.d/* /entrypoint.d/
